@@ -13,5 +13,5 @@ html, body {
 #root {
   height: 100%;
   width: 100%;
-  background-color: #313131;
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
 }
