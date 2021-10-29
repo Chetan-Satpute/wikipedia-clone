@@ -18,7 +18,7 @@ const config = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
+        type: "asset/resource",
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -29,7 +29,6 @@ const config = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
-      publicPath: "static",
     }),
   ],
   devServer: {
@@ -44,10 +43,8 @@ const config = {
   output: {
     filename: "bundle.js",
     path: path.join(__dirname, "dist"),
-    publicPath: "/static/",
     clean: true,
   },
 };
 
 module.exports = config;
-
