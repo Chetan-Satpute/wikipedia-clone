@@ -1,21 +1,30 @@
 import React, { FC } from "react";
-import { HashRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Switch, Route } from "react-router-dom";
+import Footer from "./components/Footer";
+import Edits from "./pages/Edits";
+import Explore from "./pages/Explore";
+import Saved from "./pages/Saved";
+import Search from "./pages/Search";
 
 const App: FC = () => {
   return (
-    <div className="h-full bg-blue-200">
+    <div className="h-full bg-base14 flex flex-col">
       <Router basename="/">
         <Switch>
           <Route path="/" exact={true}>
-            <h1>Wikipedia</h1>
-            <Link to="/page">Page</Link>
+            <Explore />
           </Route>
-          <Route path="/page" exact={true}>
-            <Link to="/">
-              <h1>home</h1>
-            </Link>
+          <Route path="/saved" exact={true}>
+            <Saved />
+          </Route>
+          <Route path="/search" exact={true}>
+            <Search />
+          </Route>
+          <Route path="/edits" exact={true}>
+            <Edits />
           </Route>
         </Switch>
+        <Footer />
       </Router>
     </div>
   );

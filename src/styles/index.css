@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+
 html, body {
   height: 100vh;
   width: 100vw;
@@ -13,6 +15,20 @@ html, body {
 #root {
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  /* background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12); */
   /* background-color: #63a6e5; */
+}
+
+#logo {
+  font-family: 'Zen Antique', serif;
+}
+
+#logo::before {
+  @apply text-2xl;
+  content: "W";
+}
+
+#logo::after {
+  @apply text-2xl;
+  content: "A";
 }

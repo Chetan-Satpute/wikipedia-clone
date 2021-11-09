@@ -3,7 +3,7 @@ import "./style.css";
 
 const Smartphone: FC = ({ children }) => {
   return (
-    <div className="md-iphone-5 md-black-device md-glare">
+    <div className="md-iphone-5 md-black-device md-glare" >
       <div className="md-body">
         <div className="md-buttons"></div>
         <div className="md-front-camera"></div>

@@ -8,19 +8,8 @@ import "./styles/index.css";
 const Root: FC = () => {
   const [width, height] = useScreenSize();
 
-  return (
-    <>
-      {width < 800 || height < 800 ? (
-        <App />
-      ) : (
-        <div className="h-full flex justify-center items-center">
-          <Smartphone>
-            <App />
-          </Smartphone>
-        </div>
-      )}
-    </>
-  );
+  // return ( <> {width < 800 || height < 800 ? ( <App />) : ( <div className="h-full flex justify-center items-center bg-green-400"> <Smartphone> <App /> </Smartphone> </div>)} </>);
+  return <App />;
 };
 
 ReactDOM.render(<Root />, document.getElementById("root"));
