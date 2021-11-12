@@ -28,7 +28,7 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: "./src/index.html",
     }),
   ],
   devServer: {
