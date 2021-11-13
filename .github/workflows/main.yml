@@ -1,7 +1,7 @@
 name: Build and Deploy
 on: [push]
 jobs:
-  web-build-and-deploy:
+  frontend-deploy:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -10,16 +10,34 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
 
-      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+      - name: Install and Build 🔧 
         run: |
           npm install
           npm run build
-
-      - name: List Directory
-        run: ls
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.5
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: app/dist # The folder the action should deploy.
+
+  backend-deploy:
+    runs-on: ubuntu-latest
+    env:
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Login to Heroku Container registry 🤖
+        run: heroku container:login
+
+      - name: Build and Push 🔧
+        run: heroku container:push -a ${{ secrets.HEROKU_APP_NAME }} web
+
+      - name: Release 🚀
+        run: heroku container:release -a ${{ secrets.HEROKU_APP_NAME }} web
+
