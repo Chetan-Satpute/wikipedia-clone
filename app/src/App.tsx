@@ -24,6 +24,7 @@ const App: FC = () => {
             <Edits />
           </Route>
         </Switch>
+
         <Footer />
       </Router>
     </div>

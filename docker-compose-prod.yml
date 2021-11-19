@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  app:
+    image: wikipedia-clone-app
+    build:
+      context: ./app/
+      target: PROD
+    ports:
+      - 80:80
+  server:
+    image: wikipeida-clone-server
+    build:
+      context: .
+      target: PROD
+    ports:
+      - 8000:8000
+

@@ -27,7 +27,7 @@ jobs:
       HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
     defaults:
       run:
-        working-directory: server
+        working-directory: .
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v2.3.1
